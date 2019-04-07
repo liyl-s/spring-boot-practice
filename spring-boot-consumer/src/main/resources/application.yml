@@ -1,0 +1,16 @@
+server:
+  port: 9000
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: service-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #解决http://localhost:9000/actuator/hystrix.stream无法访问的问题

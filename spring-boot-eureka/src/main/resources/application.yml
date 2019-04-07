@@ -1,0 +1,18 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+    appname: service-eureka
+  client:
+    register-with-eureka: false #自身不参与服务注册
+    fetch-registry: false #不获取服务列表
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #名字不必为defaultZone
+logging:
+  level:
+    com.netflix.eureka: OFF
+    com.netflix.discovery: OFF
+spring:
+  application:
+    name: service-eureka #f服务名
